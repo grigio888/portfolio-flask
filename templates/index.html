@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/css_index.css')}}">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo-box">
+            <a href="{{url_for('login')}}" class="text">G</a>
+        </div>
+
+        <div class="navbar-outlink-box">
+            <a href="https://www.linkedin.com/in/vinicius-grigio/" class="outlink-linkedin">
+                <img src="{{url_for('static',filename='assets/portfolio-linkedin-logo.png')}}" alt="Linked Log">
+            </a>
+            <a href="https://github.com/grigio888/" class="outlink-github">
+                <img src="{{url_for('static',filename='assets/portfolio-github-logo.png')}}" alt="Linked Log">
+            </a>
+        </div>
+    </div>
+
+    <section class="first-scroll">
+        <div class="container">
+            <div class="first-scroll-box-text">
+                <h1>Welcome</h1>
+                <h2>I'm Vinicius Grigio<br>and this is my Portfolio.</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="second-scroll">
+        <div class="container">
+            <div class="second-scroll-box-text">
+                <h2>In here, I’ll show some of my skills with creativity, trying to make a beautiful and responsive website.</h2>
+            </div>
+            <div class="second-scroll-box-art">G</div>
+        </div>
+    </section>
+
+    <section class="third-scroll">
+        <div class="container">
+            <div class="art-container">
+                <div class="third-scroll-box-art" tile="art">
+                    {% for i in range(3) %}
+                        <h1>...</h1>
+                    {% endfor %}
+                </div>
+                <div class="third-scroll-box-art-scnd-lay">
+                    {% for i in range(3) %}
+                        <h1>...</h1>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="third-scroll-box-text">
+                <h2 class="text">And I'll build a place confortable to hone my skill and show some of things that I'm currently work (ed) on.</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="fourth-scroll">
+        <div class="container">
+            <div class="fourth-scroll-box-text">
+                <h2>Cases of Study</h2>
+            </div>
+            <div class="fourth-scroll-box-layout">
+                {% for i in range(1) %}
+                    <div class="case"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>
