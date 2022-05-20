@@ -1,0 +1,103 @@
+@use '../pattern/colors';
+
+$animation: 0.75s;
+
+.login-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: transparent;
+
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    z-index: 1000;
+
+    transition: opacity $animation;
+}
+
+.login-modal-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    height: 20em;
+    width: 20em;
+
+    background-color: map-get(colors.$colors, background);
+    border: 1px solid map-get(colors.$colors, theme);
+    border-radius: 0.25em;
+    box-shadow: 0 6px 16px 6px rgba(255, 255, 255, 0.1);
+
+    opacity: 0;
+    z-index: 1001;
+
+    transition: opacity $animation;
+
+    .icon-user {
+        margin-bottom: 0.5em;
+
+        &:before {
+            content: '\f007';
+            font-weight: 700;
+            font-size: 1.5em;
+            color: map-get(colors.$colors, theme);
+        }
+    }
+
+    label {
+        color: map-get(colors.$colors, theme);
+    }
+
+    input, button, select {
+        width: 50%;
+
+        padding: 0.25em;
+
+        color: map-get(colors.$colors, theme);
+
+        background-color: map-get(colors.$colors, background);
+        border: 1px solid map-get(colors.$colors, theme);
+        border-radius: 0.25em;
+
+        transition: box-shadow $animation;
+
+        &:active, &:hover {
+            box-shadow: 0 0 3px 2px map-get(colors.$colors, theme);
+        }
+        
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 10px 2px map-get(colors.$colors, theme);
+        }
+    }
+
+    button {
+        width: fit-content;
+
+        margin-top: 1em;
+        padding: 0.25em 2em;
+
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        transition: box-shadow $animation, background-color $animation, color $animation;
+
+        &:hover {
+            background-color: map-get(colors.$colors, theme);
+            color: map-get(colors.$colors, background);
+        }
+    }
+}

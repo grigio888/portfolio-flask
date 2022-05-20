@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+$default-font-family: 'Poppins', sans-serif;
+
+@mixin font-family() {
+    font-family: $default-font-family;
+}

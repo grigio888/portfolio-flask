@@ -85,6 +85,10 @@
   border-radius: 5px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   margin: 0;
@@ -144,6 +148,7 @@ section .container h2 {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 .navbar-new .navbar-btn {
@@ -162,7 +167,7 @@ section .container h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 20;
+  z-index: 1001;
 }
 
 .navbar-new .navbar-btn img {
@@ -185,7 +190,7 @@ section .container h2 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 19;
+  z-index: 999;
   width: 16em;
   height: var(--navbar-height);
   background: var(--cor-6);
@@ -203,7 +208,7 @@ section .container h2 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 18;
+  z-index: 997;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

@@ -1,0 +1,239 @@
+// default behavior
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+
+:root {
+    --color-background: #0c0b0a;
+    --color-background-modal: transparent;
+    --color-5: #4e4e4e;
+    --color-6: #383838;
+    --color-theme: #ef6817;
+    --color-text: #a5a5a5;
+
+    --animation-speed: 2s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 98vh;
+
+    margin: 0;
+
+    background: var(--color-background);
+}
+
+.icon {
+
+    &:before {
+        display: flex;
+        align-items: center;
+
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+
+
+// animations
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    66% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+}
+
+@keyframes breathing {
+    0% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.1;
+    }
+}
+
+
+// page style
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+    h1 {    
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, -25%);
+
+        width: 200%;
+        height: 150%;
+
+        animation: breathing calc(var(--animation-speed)*2) infinite;
+
+        font-size: 4em;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--color-text);
+        filter: blur(max(1vh, 0.5vw));
+    }
+}
+
+.logon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: var(--color-background);
+    border: 1px solid var(--color-theme);
+    border-radius: 0.25em;
+    box-shadow: 0 6px 16px 6px rgba(255, 255, 255, 0.1);
+
+    transition: height var(--animation-speed),
+                width var(--animation-speed),
+                padding var(--animation-speed),
+                margin var(--animation-speed);
+
+    .icon-login {
+        height: 50px;
+        width: 50px;
+
+        cursor: pointer;
+
+        &:before {
+            content: '\f090';
+
+            font-size: 3em;
+            color: var(--color-theme);
+            //-webkit-text-stroke: 2px var(--color-6);
+        }
+    }
+
+    .logon-field-box {
+        display: none;
+    }
+}
+
+.logon-box-after {
+    display: block;
+
+    height: 250px;
+    width: 300px;
+
+    padding: 25px;
+    margin: 0;
+
+    .icon-login {
+        margin: 1.55em auto;
+
+        cursor: default;
+    }
+
+    .logon-field-box {
+        display: flex;
+
+        margin: auto;
+        //margin-top: 15px;
+
+        form {
+            margin: auto;
+            margin-top: 10px;
+            
+            animation-name: fadeIn;
+            animation-duration: 3s;
+
+            input {
+                display: flex;
+
+                height: 20px;
+                width: 240px;
+
+                margin-bottom: 15px;
+                padding: 5px;
+
+                border: 1px solid var(--color-theme);
+                border-radius: 5px;
+                background-color: var(--color-background-modal);
+
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+                color: white;
+
+                &::placeholder {
+                    text-transform: uppercase;
+                    color: lightgray;
+                }
+            }
+
+            .button_submit {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                height: 30px;
+                width: 75px;
+                
+                margin: auto;
+                padding: 5px;
+
+                text-transform: uppercase;
+                font-weight: bold;
+                color: var(--color-theme);
+
+                box-shadow: none;
+
+                transition: background-color calc(var(--animation-speed) / 4),
+                            color calc(var(--animation-speed) / 4),
+                            box-shadow calc(var(--animation-speed) / 4);
+
+                &:hover, &:focus {
+                    background-color: var(--color-theme);
+                    color: var(--color-background);
+                    box-shadow: 0 0 8px 4px var(--color-theme);
+                }
+            }
+        }
+    }
+}

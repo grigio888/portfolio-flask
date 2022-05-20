@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static',filename='styles/css_index.css')}}">
+    <script src="https://kit.fontawesome.com/854b74e973.js" crossorigin="anonymous"></script>
     {% block css %}
     {% endblock %}
     <title>
@@ -13,15 +13,20 @@
     </title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-logo-box">
-            <a href="{{url_for('manager')}}" class="text">G</a>
-        </div>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                Gerenciador
+            </div>
 
-        <div class="navbar-outlink-box">
-            <a href="{{url_for('index')}}" class="logout">
-                <img src="{{url_for('static', filename='assets/fi-rr-sign-out-alt-orange.svg')}}" alt="" class="logout-img">
-            </a>
+            <ul>
+                {% block navbar %}
+                {% endblock %}
+            </ul>
+
+            <ul>
+                <li><a href="{{url_for('logout')}}" class="icon icon-logout"></a></li>
+            </ul>
         </div>
     </div>
 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index_v2.css')}}">
+    <script src="https://kit.fontawesome.com/854b74e973.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="navbar">
+            <div id="loginTrigger" class="logo">
+                G<span>rigio</span>
+            </div>
+            <ul class="items">
+                <li class="item"><a href="#heroSection">Home</a></li>
+                <li class="item"><a href="#contentSection">More Stuff</a></li>
+                <li class="item"><a href="#skillSection">Skills</a></li>
+                <li class="item"><a href="#caseSection">Cases</a></li>
+                <li class="item"><a href="#contactSection">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="heroSection">
+        <div class="background-text-frame">
+            <div class="background-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse hic maxime voluptatum obcaecati provident sunt amet odio inventore nemo laudantium. Praesentium dolorem distinctio consequuntur vero ipsum debitis porro, quaerat veritatis? Animi soluta placeat nobis minima, sapiente harum voluptas inventore consequatur quis ipsa repellendus. Soluta sequi maxime architecto culpa qui at officiis, autem sunt perspiciatis quas asperiores adipisci unde magnam quasi quisquam nobis? Dicta maxime sed facilis fuga eius rem tenetur! Quisquam veritatis quae atque mollitia praesentium accusantium quasi minus dolor, voluptatum dolorum! Eos aut at provident nesciunt excepturi recusandae, sed sunt, rem unde, quia nemo? Iste mollitia tempore vitae, reprehenderit et dolorum eum nemo. Facere, vero. Non quis accusantium ea quos nulla pariatur porro harum nesciunt eius quas explicabo voluptate nam, placeat culpa corporis! Nostrum consectetur architecto deleniti fugiat adipisci odio exercitationem culpa mollitia animi natus. Obcaecati, eaque sunt. Nisi accusamus dicta labore fugiat sequi explicabo doloribus dolore? Voluptates, incidunt praesentium, sit pariatur molestiae iste, ducimus in deserunt error quod at. Eaque quisquam repudiandae suscipit quidem blanditiis minus voluptatum doloribus esse assumenda deserunt! Cum excepturi odio est suscipit nam vitae tempora laudantium neque, asperiores illum nesciunt quos voluptate at commodi ratione omnis inventore quia doloribus explicabo incidunt facere culpa aperiam.
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="first-scroll-box-text">
+                <h1>I'm Grigio</h1>
+                <h2>
+                    and this is my Portfolio.<br>
+                    In here, I'll show somethings I know<br>
+                    and others I've already made.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="contentSection">
+        <div class="container">
+            <div class="card-carousel">
+                <div id="card" class="content-scroll-box-art animation">
+                    <h1 class="card-title">With CSS animations,</h1>
+                    <h2 class="card-descr">the resource costs is much lower than a actual rendering.</h2>
+                </div>
+            </div>
+            <div class="content-scroll-box-text">
+                <h1>
+                    For example, I can manipulate SCSS and JavaScript to do something cool.
+                </h1>
+                <h2>
+                    Click <span id="cardTrigger">here</span> to see it.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="skillSection">
+        <div class="container">
+            <h1>Skills</h1>
+            <div class="description">
+                <h2>Languages that I know:</h2>
+                <ul>
+                    <li><div class="icon python">Python</div></li>
+                    <li><div class="icon javascript">JavaScript</div></li>
+                    <li><div class="icon html">HTML</div></li>
+                    <li><div class="icon css">CSS</div></li>
+                    <li><div class="icon sql">SQL</div></li>
+                </ul>
+                <h2>Frameworks & Tools that I use:</h2>
+                <ul>
+                    <li><div class="icon python">Flask</div></li>
+                    <li><div class="icon python">Django</div></li>
+                    <li><div class="icon css">SCSS</div></li>
+                    <li><div class="icon python">Selenium</div></li>
+                    <li><div class="icon sql">SQLAlchemy</div></li>
+                    <li><div class="icon python">PySide</div></li>
+                    <li><div class="icon github">Copilot</div></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="caseSection">
+        <div class="container">
+            <div class="background-text-frame">
+                <div class="background-text">
+                    <span>X O V G X O V G X O V G X O V G</span><br>
+                    <span>O V G X O V G X O V G X O V G X</span><br>
+                    <span>V G X O V G X O V G X O V G X O</span><br>
+                    <span>G X O V G X O V G X O V G X O V</span><br>
+                    <span>X O V G X O V G X O V G X O V G</span>
+                </div>
+            </div>
+            <div class="third-scroll-box-text">
+                <h2>Cases of Study</h2>
+            </div>
+            <div class="third-scroll-box-layout">
+                <div class="case">
+                    <a href="https://www.galudaowebstore.com.br/">
+                        <img src="{{url_for('static', filename='assets/case-1.png')}}" alt="">
+                        <h1>
+                            Galudão Web Store
+                        </h1>
+                        <h2>
+                            e-Commerce DOTA 2 Store
+                        </h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactSection">
+        <div class="container">
+            <div class="fourth-scroll-box-text">
+                <h2>Contact</h2>
+            </div>
+            <div class="fourth-scroll-box-layout">
+                <a href="https://linkedin.com/in/vinicius-grigio" class="contact" id="linkedin">
+                    <div class="icon linkedin"></div>
+                </a>
+                <a href="https://github.com/grigio888" class="contact" id="github">
+                    <div class="icon github"></div>
+                </a>
+            </div>
+            <div class="contact-label" data-label="test"></div>
+        </div>
+    </section>
+
+    <div class="navbar-mobile">
+        <div class="menu-navbar">
+            <div class="selector" id="selector"></div>
+            <ul class="menu-itself">
+                <a class="menu-item icon home" id="menuHome" href="#heroSection"></li>
+                <a class="menu-item icon more" id="menuMore" href="#contentSection"></li>
+                <a class="menu-item icon skil" id="menuSkil" href="#skillSection"></li>
+                <a class="menu-item icon case" id="menuCase" href="#caseSection"></li>
+                <a class="menu-item icon cont" id="menuCont" href="#contactSection"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='script/index_v2.js')}}"></script>
+    <script src="{{url_for('static', filename='script/login.js')}}"></script>
+</body>
+</html>

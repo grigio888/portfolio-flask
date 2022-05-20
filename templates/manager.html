@@ -1,25 +1,31 @@
 {% extends "logged_template.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/css_manager.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/manager.css')}}">
 {% endblock %}
 
 {% block title %}
-    Manager
+    Gerenciador
+{% endblock %}
+
+{% block navbar %}
+<li class="icon icon-user">
+    {{session['username']}}
+</li>
 {% endblock %}
 
 {% block body %}
     {% for item in data %}
-        <section>
-            <div class="container">
-                <div class="painel">
+        <section id="section{{item.title()}}">
+            <div class="container" id="container{{item.title()}}">
+                <div class="painel" id="painel{{item.title()}}">
                     {% if item == 'usuario' %}
                         <h1>
                             {{data[item]['titulo']}}
                         </h1>
-                        
+
                         <div class="grid-container">
-                            <div class="grid-layout">
+                            <div class="grid-layout"  id="grid{{item.title()}}">
                                 {% for dados in data[item]['dados'] %}
                                 {% set card =  data[item]['dados'][dados]%}
                                     <div class="card">
@@ -38,101 +44,26 @@
                         <h1>
                             {{data[item]['titulo']}}
                         </h1>
-                        
-                        <div class="contexto-body">
-                            <div class="switching-oper">
-                                <div class="select-target">
-                                    <label for="target">
-                                        Alvo: 
-                                    </label>
-                                    
-                                    <select name="target" id="target-select" class="switchin-target-selection">
-                                        <option value="">Selecione um alvo</option>
-                                        <option value="oper">Operações</option>
-                                        <option value="duv_fin">Dúvidas Financeiras</option>
-                                        <option value="duv_ret">Dúvidas Retenção</option>
-                                        <option value="duv_tec">Dúvidas Técnicas</option>
-                                    </select>
-                                </div>
 
-                                <div class="select-oper">
-                                    <label for="oper">
-                                        Operação: 
-                                    </label>
-                                    
-                                    <select name="oper" id="oper-select" class="switchin-oper-select">
-                                        <option value="">Selecione uma operação</option>
-                                        <option value="add">Criar</option>
-                                        <option value="edit">Editar</option>
-                                        <option value="delete">Excluir</option>
-                                    </select>
-                                </div>
-
-                                <div class="container-behavior">
-                                    <div class="oper-add-behavior">
-                                        <form action="">
-                                            <div class="oper-behavior-divider">
-                                                <label for="id-oper">ID:</label>
-                                                <input class="input-field" name="id-oper" type="text">
-                                            </div>
-                                            <div class="oper-behavior-divider">
-                                                <label for="nome-oper">Operação:</label>
-                                                <input class="input-field" name="nome-oper" type="text">
-                                            </div>
-                                            <div class="oper-behavior-divider">
-                                                <label for="nome-suboper">Suboperação:</label>
-                                                <input class="input-field" name="nome-suboper" type="text">
-                                            </div>
-                                            <div class="oper-behavior-divider-submit">
-                                                <input class="submit-field" type="submit" class="submit-btn">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="oper-edit-behavior">
-                                        <div class="oper-edit-select">
-                                            <select name="oper-edit-select" id="oper-edit">
-                                                <option value="">Selecione um item para alterar</option>
-                                            </select>
-                                        </div>
-                                        <form action="">
-                                            <div class="oper-behavior-divider">
-                                                <label for="id-oper">ID:</label>
-                                                <input class="input-field" name="id-oper" type="text">
-                                            </div>
-                                            <div class="oper-behavior-divider">
-                                                <label for="nome-oper">Operação:</label>
-                                                <input class="input-field" name="nome-oper" type="text">
-                                            </div>
-                                            <div class="oper-behavior-divider">
-                                                <label for="nome-suboper">Suboperação:</label>
-                                                <input class="input-field" name="nome-suboper" type="text">
-                                            </div>
-                                            <div class="oper-behavior-divider-submit">
-                                                <input class="submit-field" type="submit" class="submit-btn">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="oper-delete-behavior">
-                                        <select name="" id=""></select>
-                                    </div>
-                                </div>
+                        <div class="grid-container">
+                            <div class="grid-layout" id="grid{{item.title()}}">
                             </div>
                         </div>
                     {% elif item == 'login' %}
                         <h1>
                             {{data[item]['titulo']}}
                         </h1>
-                        
+
                         <div class="grid-container">
-                            <div class="grid-layout">
+                            <div class="grid-layout" id="grid{{item.title()}}">
                                 {% for dados in data[item]['dados'] %}
                                     <div class="card">
                                         <div>PC: {{dados}}</div>
                                         <div>
                                         {% if data[item]['dados'][dados] %}
-                                            <img id={{dados}} src="{{url_for('static', filename='assets/fi-rr-cross-small.svg')}}" alt="" class="btn-decline">
+                                            <div id={{dados}} alt="" class="btn-decline icon icon-decline"></div>
                                         {% else %}
-                                            <img id={{dados}} src="{{url_for('static', filename='assets/fi-rr-check-orange.svg')}}" alt="" class="btn-confirm">
+                                            <div id={{dados}} alt="" class="btn-confirm icon icon-decline"></div>
                                         {% endif %}
                                         </div>
                                     </div>

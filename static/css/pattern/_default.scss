@@ -1,0 +1,49 @@
+@use 'colors';
+@use 'fonts';
+
+
+// general style
+* {
+    @include fonts.font-family();
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// scrollbar style
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    margin-right: 5px;
+
+    background: map-get(colors.$colors, 'theme');
+    
+    border-radius: 5px;
+}
+
+// html scroll behavior
+html {
+    scroll-behavior: smooth;
+}
+
+// font awesome class constructor
+.icon {
+    
+    &:before {
+        display: flex;
+        align-items: center;
+
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+}

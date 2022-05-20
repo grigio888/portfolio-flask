@@ -1,0 +1,281 @@
+@use 'pattern/colors';
+
+@import 'pattern/default';
+@import url("../css/index_v2.css");
+
+.header {
+
+    .navbar {
+
+        ul {
+
+            li {
+
+                .icon-logout {
+
+                    &:before {
+                        font-weight: 700;
+                        content: "\f08b";
+                    }
+                }
+            }
+
+            li.icon-user {
+                cursor: default;
+
+                &:before {
+                    font-weight: 700;
+                    content: '\f007';
+
+                    margin-right: 0.5em;
+                }
+
+                &:hover {
+                    &:after {
+                        display: none;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: auto;
+
+    margin-top: calc(var(--navbar-height) * 1.1);
+
+    .container {
+        width: 95%;
+        min-height: 100%;
+
+        .painel {
+            width: 100%;
+            height: 70%;
+
+            padding-bottom: 3em;
+
+            border: 2px solid map-get(colors.$colors, theme);
+            border-radius: 5px;
+            box-shadow: 0 0 0 0 map-get(colors.$colors, shadow);
+            background-color: map-get(colors.$colors, background);
+
+            transition: box-shadow 0.5s;
+
+            h1 {
+                margin: 0.5em 0;
+                font-size: 3em;
+                color: map-get(colors.$colors, text);
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 1.5em;
+                color: map-get(colors.$colors, text);
+                text-align: center;
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px 0 map-get(colors.$colors, shadow);
+            }
+        }
+    }
+}
+
+section + section {
+    margin-top: 3%;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 0;
+
+    .grid-layout {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-gap: 10px;
+
+        margin: 0 5%;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 12em;
+
+            padding: 10px;
+
+            border: 2px solid map-get(colors.$colors, theme);
+            border-radius: 5px;
+            box-shadow: 0 0 0 0 map-get(colors.$colors, theme);
+            background-color: map-get(colors.$colors, shadow);
+            
+            transition: all 0.5s;
+
+            div {
+                display: block;
+
+                text-align: center;
+                color: map-get(colors.$colors, background);
+            }
+
+            .login {
+                padding-bottom: 5px;
+
+                font-size: 1.2em;
+            }
+
+            .btn-confirm, .btn-decline {
+
+                &:before {
+                    content: "\f00c";
+
+                    display: flex;
+                    justify-content: center;
+
+                    font-size: 1.5em;
+                    font-weight: 700;
+                    color: map-get(colors.$colors, theme);
+
+                    cursor: pointer;
+                }
+            }
+
+            .btn-decline {
+
+                &:before {
+                    content: "\f00d";
+
+                    color: map-get(colors.$colors, background);
+                }
+            }
+
+            &:hover {
+                box-shadow: 0 0 10px 0 map-get(colors.$colors, theme);
+            }
+        }
+    }
+}
+
+@import 'window/login';
+
+.login-modal-window {
+    justify-content: left;
+    width: fit-content;
+
+    padding: 0 1em;
+
+    transition: height $animation, width $animation, opacity $animation;
+
+    overflow: hidden;
+
+    .row-crud {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            width: fit-content;
+
+            padding: 10px;
+
+            border: 2px solid map-get(colors.$colors, theme);
+            border-radius: 5px;
+            box-shadow: 0 0 0 0 map-get(colors.$colors, theme);
+            background-color: map-get(colors.$colors, shadow);
+
+            text-align: center;
+            color: map-get(colors.$colors, background);
+
+            overflow: hidden;
+            
+            transition: all 0.5s;
+
+            &:hover {
+                box-shadow: 0 0 10px 0 map-get(colors.$colors, theme);
+            }
+        }
+    }
+
+    .row-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.25em;
+
+        width: 75%;
+
+        margin: 0 auto;
+        margin-top: 1em;
+
+        input, select {
+            width: 100%;
+        }
+
+        button {
+            margin: 1.25em auto;
+        }
+
+        .editable {
+            display: flex;
+            gap: 0.25em;
+
+            width: 100%;
+
+            .icon-edit {
+                height: 100%;
+
+                &:before {
+                    content: "\f303";
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    height: 100%;
+
+                    margin-left: 0.5em;
+
+                    font-size: 1em;
+                    font-weight: 700;
+                    color: map-get(colors.$colors, theme);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+
+        .navbar {
+
+            ul {
+                display: flex;
+            }
+        }
+    }
+}

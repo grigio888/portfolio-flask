@@ -91,96 +91,6 @@ section .container h2 {
   color: var(--cor-5);
 }
 
-.navbar-new {
-  position: fixed;
-  top: 0;
-  left: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.navbar-new .navbar-btn {
-  width: var(--navbar-height);
-  height: var(--navbar-height);
-  background: var(--cor-2);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.navbar-new .navbar-btn img {
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-}
-
-.navbar-new .navbar-btn-expnd {
-  display: none;
-}
-
-.navbar-new .navbar-expnd {
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.navbar-new .navbar-expnd ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.navbar-new .navbar-expnd ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.navbar-new .navbar-expnd ul li a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  color: var(--cor-5);
-  padding: 0.5rem;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.navbar-new .navbar-expnd ul li a:hover {
-  color: var(--cor-1);
-}
-
 .navbar {
   position: fixed;
   display: -webkit-box;
@@ -194,7 +104,7 @@ section .container h2 {
   width: 100vw;
   min-height: var(--navbar-height);
   background: var(--cor-2);
-  z-index: 11;
+  z-index: 1000;
 }
 
 .navbar .navbar-logo-box {
@@ -209,6 +119,7 @@ section .container h2 {
           justify-content: center;
   width: var(--navbar-height);
   height: var(--navbar-height);
+  z-index: 1000;
 }
 
 .navbar .navbar-logo-box a {
@@ -218,6 +129,7 @@ section .container h2 {
   color: var(--cor-1);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  z-index: 1000;
 }
 
 .navbar .navbar-logo-box a:hover {
@@ -237,6 +149,7 @@ section .container h2 {
           justify-content: center;
   width: calc(var(--navbar-height)* 2 + 0px);
   height: var(--navbar-height);
+  z-index: 1000;
 }
 
 .navbar .navbar-outlink-box a {
